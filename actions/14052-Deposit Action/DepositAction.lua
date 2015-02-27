@@ -3,11 +3,11 @@ init start
     local lootBackpack      =   "red backpack"     -- bp name or loot destination
     local stackBackpack     =   "green backpack"   -- bp name or loot destination
     local raresBackpack     =   "blue backpack"    -- bp name or loot destination
-    local depositItems      =   ""         -- categories or {items list}
+    local depositItems      =   ""                 -- categories or {items list}
 
     -- DO NOT EDIT BELOW --
 
-    --local SCRIPT_VERSION = "1.0.0"
+    --local SCRIPT_VERSION = "1.1.0"
     local debugMode, debugmsg = true, '' -- for script developers
     local tempItems, typeItems = {}, type(depositItems)
 
@@ -78,29 +78,30 @@ end
 
 while (true) do
     local stackBpsAmount, rareBpsAmount = itemcount(stackBackpack, depotBackpack), itemcount(raresBackpack, depotBackpack)
-    local cont = getcontainer(lootBackpack)
-	clearlastonto()
+    local cont, stacklastonto = getcontainer(lootBackpack), {}
+    clearlastonto()
 
     while cont.isopen do
         for k = cont.itemcount, 1, -1 do
             if table.find(depositItems, cont.item[k].id) then
                 local info = iteminfo(cont.item[k].id)
-
+		stacklastonto[info.id] = (stacklastonto[info.id] or 1)
+		
                 if info.iscumulative then
-                    while stackBpsAmount >= $lastonto do
+                    while stackBpsAmount >= stacklastonto[info.id] do
                         local itemamount = itemcount(info.id, cont.name)
 
                         setlifetime(60000)
-                        moveitemsonto(info.id, stackBackpack, $lastonto) waitping()
+                        moveitemsonto(info.id, stackBackpack, stacklastonto[info.id]) waitping()
 
                         if itemcount(info.id, cont.name) == itemamount then
-                            stackLastOnto[info.id] = stackLastOnto[info.id] + 1
+                            stacklastonto[info.id] = stacklastonto[info.id] + 1
                         else
                             break
                         end
                     end
 
-                    if $lastonto > stackBpsAmount and depotBpsAmount > 1 then
+                    if stacklastonto[info.id] > stackBpsAmount and depotBpsAmount > 1 then
                         openNext = true
                     end
                 else
