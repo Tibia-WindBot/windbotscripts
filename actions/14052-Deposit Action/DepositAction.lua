@@ -7,7 +7,7 @@ init start
 
     -- DO NOT EDIT BELOW --
 
-    --local SCRIPT_VERSION = "1.1.0"
+    --local SCRIPT_VERSION = "1.1.1"
     local debugMode, debugmsg = true, '' -- for script developers
     local tempItems, typeItems = {}, type(depositItems)
 
@@ -110,12 +110,6 @@ while (true) do
 
                         setlifetime(60000)
                         moveitemsonto(info.id, raresBackpack, $lastonto) waitping()
-
-                        if itemcount(info.id, cont.name) == itemamount then
-                            rareLastOnto = rareLastOnto + 1
-                        else
-                            break
-                        end
                     end
 
                     if $lastonto > rareBpsAmount and depotBpsAmount > 1 then
