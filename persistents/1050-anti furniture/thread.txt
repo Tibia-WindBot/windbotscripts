@@ -14,4 +14,4 @@ Just set the meele item name you want to use to break items and the stand time, 
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/1050-antifurniture/AntiFurniture.lua"]Download[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/1050-anti%%20furniture/AntiFurniture.lua"]Download[/URL][/SIZE]
