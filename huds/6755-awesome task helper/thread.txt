@@ -28,4 +28,4 @@ To configurate this script simply use the right mouse click, this will open a me
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://github.com/LeonardoFalk/windscripts/raw/master/huds/6755-awesome%%20task%%20helper/AweTaskHelper.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://github.com/LeonardoFalk/windbotscripts/raw/master/huds/6755-awesome%%20task%%20helper/AweTaskHelper.lua"]Download[/URL][/SIZE]

@@ -18,4 +18,4 @@ Edit the [I]Rune[/I] variable with the area rune name you want to use and finall
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/2364-area%%20rune%%20shooter/AreaRuneShooter.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/2364-area%%20rune%%20shooter/AreaRuneShooter.lua"]Download[/URL][/SIZE]

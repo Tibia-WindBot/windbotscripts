@@ -14,4 +14,4 @@ Fill the [I]SafeList[/I] with names of people you don't want to respond. Set [I]
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/157-auto%%20responder/AutoResponder.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/157-auto%%20responder/AutoResponder.lua"]Download[/URL][/SIZE]

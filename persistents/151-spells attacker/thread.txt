@@ -23,4 +23,4 @@ If you want to use this script only when Targeting engine is enabled then set Us
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/151-spells%%20attacker/SpellsAttacker.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/151-spells%%20attacker/SpellsAttacker.lua"]Download[/URL][/SIZE]

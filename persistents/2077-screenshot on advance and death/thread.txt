@@ -14,4 +14,4 @@ Change the [I]Skills[/I] variable to specify which skills the bot should save. F
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/2077-screenshot%%20on%%20advance%%20and%%20death/ScreenshotOnAdvDeath.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/2077-screenshot%%20on%%20advance%%20and%%20death/ScreenshotOnAdvDeath.lua"]Download[/URL][/SIZE]

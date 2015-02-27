@@ -16,4 +16,4 @@ Configure your backpack names or give the variables of the looting destination v
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="#"]Download[/URL][/SIZE]
+[SIZE=1][URL="https://github.com/LeonardoFalk/windbotscripts/raw/master/actions/14052-Deposit%20Action/DepositAction.lua"]Download[/URL][/SIZE]

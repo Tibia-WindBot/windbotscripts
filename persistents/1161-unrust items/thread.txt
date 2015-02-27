@@ -15,4 +15,4 @@ Set [B][COLOR="#6666cc"]true[/COLOR][/B] to ignore or [B][COLOR="#6666cc"]false[
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/1161-unrust%%20items/UnrustItems.lua"]Download[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/1161-unrust%%20items/UnrustItems.lua"]Download[/URL][/SIZE]

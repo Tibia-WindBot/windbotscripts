@@ -14,7 +14,7 @@ Change [I]CommonShape[/I] to [B][COLOR="#0066ff"]true[/COLOR][/B] if you don't w
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/huds/6318-show%%20runes/ShowRunes.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/huds/6318-show%%20runes/ShowRunes.lua"]Download[/URL][/SIZE]
 
 [SIZE=4][B]Special Thanks[/B][/SIZE]
 

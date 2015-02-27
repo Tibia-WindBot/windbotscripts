@@ -13,4 +13,4 @@ Set [I]IgnoreSS[/I] to [COLOR="#0033ff"][B]true[/B][/COLOR] to ignore the server
 [SIZE=4][B]Code[/B][/SIZE]
 
 [LUA]%s[/LUA]
-[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/2531-safe%%20reconnect/SafeReconnect.lua"]Gist[/URL][/SIZE]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windbotscripts/master/persistents/2531-safe%%20reconnect/SafeReconnect.lua"]Download[/URL][/SIZE]
