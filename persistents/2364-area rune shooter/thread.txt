@@ -1,0 +1,21 @@
+[CENTER][SIZE=7][B]Area Rune Shooter[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Attacks monsters with area runes like avalanche, great fireball, stoneshower or thunderstorm.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Add monsters names on the [I]Monsters[/I] variable to consider those monsters on the spells areas, an empty list will use on any monster. Set the [I]AmountToShoot[/I] variable to use rune when the amount given are inside an area.
+
+Edit [I]Players.Consider[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B] if you are playing on PvP worlds, this option will avoid using runes when there are players near, set [B][COLOR="#6666cc"]false[/COLOR][/B] to ignore this option. If you have set [I]Players.Consider[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B], edit the minimum distance to consider them by changing the [I]Players.Distance[/I] parameter. To consider floors up and down use the [I]Players.FloorDifference[/I] parameter. Optionally you can add friends on the [I]SafeList[/I] so the script will ignore them.
+
+Edit the [I]Rune[/I] variable with the area rune name you want to use and finally change the [I]MoveSpeed[/I] variable to use the mouse speed from 1 to 9.
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/2364-area%%20rune%%20shooter/AreaRuneShooter.lua"]Gist[/URL][/SIZE]

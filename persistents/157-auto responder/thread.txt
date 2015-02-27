@@ -1,0 +1,17 @@
+[CENTER][SIZE=7][B]Auto Responder[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+It'll respond to people that talk to you while you're hunting.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Fill the [I]SafeList[/I] with names of people you don't want to respond. Set [I]MinLevel[/I] to the minimum required level to consider message. Set [I]IgnoreMonsters[/I] to [B][COLOR="#6666cc"]false[/COLOR][/B] to avoid talking when you are surrounded by monsters, [B][COLOR="#6666cc"]true[/COLOR][/B] to ignore them. Set [I]LogText[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B] to create a Log file, saving all the conversation of your character (Saved at WindBot/files folder), set [B][COLOR="#6666cc"]false[/COLOR][/B] to don't use this feature. Set [I]UseDatabase[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B] to restore previous values such ignored characters, set [B][COLOR="#6666cc"]false[/COLOR][/B] to don't use this feature.
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/157-auto%%20responder/AutoResponder.lua"]Gist[/URL][/SIZE]

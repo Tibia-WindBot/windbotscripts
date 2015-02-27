@@ -1,0 +1,17 @@
+[CENTER][SIZE=7][B]Anti Furniture[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Breaks all items that can't be walked over, such as Troughs and Flower Pots. It uses browse field if the item is trapped by other items.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Just set the meele item name you want to use to break items and the stand time, [U]in seconds[/U], to start running script. [U]Be sure to have the item on your hotkeys as crosshair or at least being visible on the opened backpacks[/U].
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/1050-antifurniture/AntiFurniture.lua"]Gist[/URL][/SIZE]

@@ -1,0 +1,21 @@
+[CENTER][SIZE=7][B]Private Messages[/B][/SIZE]
+
+[IMG]http://i.imgur.com/Zw2VGsW.png[/IMG][/CENTER]
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+It'll show all the private messages sent and received on your screen.
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Change [I]Sent[/I] to [B][COLOR="#0066ff"]true[/COLOR][/B] to show messages sent by your character on the display, set it to [B][COLOR="#0066ff"]false[/COLOR][/B] to hide them.
+Change [I]Received[/I] to [B][COLOR="#0066ff"]true[/COLOR][/B] to show messages received by your character on the display, set it to [B][COLOR="#0066ff"]false[/COLOR][/B] to hide them.
+Change [I]MaxLines[/I] to the number of lines you want to display.
+Change [I]Scroll[/I] to [B][COLOR="#0066ff"]true[/COLOR][/B] to enable mouse scroll between messages on the display, set it to [B][COLOR="#0066ff"]false[/COLOR][/B] to ignore this feature.
+Change [I]Length[/I] to the maximum text length you want to display.
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://github.com/LeonardoFalk/windscripts/raw/master/huds/6753-awesome%%20private%%20messages/AwePrivateMessages.lua"]Gist[/URL][/SIZE]

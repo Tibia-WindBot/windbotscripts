@@ -1,0 +1,3 @@
+Find and fix the script to don't ignore the monster you're attacking if someone was found on the screen.
+If someone was found in the screen and another person on safe list is in the list the antiks should ignore only the monsters for the safelist players (kinda impossible).
+Change the name of the variables they don't have anything relationed with antiks safelist was meant to be a safe list and not the list of players you want to ks.

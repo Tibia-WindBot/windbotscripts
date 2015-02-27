@@ -1,0 +1,19 @@
+[CENTER][SIZE=7][B]Deposit Action[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Deposits all items from your loot backpack to your depot separating items by the stackable property, using the old style depositer system.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Configure your backpack names or give the variables of the looting destination variable, both will work. As the item list you can give the categories from your looting list or input a list manually. It turns off "open next backpack" and reactivates. This will not open your loot backpack. It supports multiple depot backpacks, check the image for more info.
+
+[center][img]http://i.imgur.com/PSXLHRn.png[/img]
+[SIZE=1]It tries to deposit all items on the red highlighted backpack, if that's not enough it'll try the yellow one and so on.[/SIZE][/center]
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="#"]Download[/URL][/SIZE]

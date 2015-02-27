@@ -1,0 +1,31 @@
+[CENTER][SIZE=7][B]Task Helper[/B][/SIZE]
+
+[IMG]http://i.imgur.com/vrB8Lqi.png[/IMG][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+It'll show the amount of killed monsters selected on your screen and the totals.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+To configurate this script simply use the right mouse click, this will open a menu with all the options available.
+
+[INDENT]
+[LIST]
+[*][B]Show All[/B]: Show all the monsters in a separated line.
+[*][B]Show Total Only[/B]: Show the total amount of monsters only.
+[*][B]Reset Monsters[/B]: This will set all monsters killed amount to 0. If you're using killCount by Raphael, it'll reset all the monsters on your database too.
+[*][B]Reset Timer[/B]: Restarts the timer.
+[*][B]Reset Both[/B]: Resets both timer and monsters.
+[*][B]Add Monster[/B]: This will ask for a monster name and will add its amount on the display.
+[*][B]Remove Monster[/B]: This will remove a monster name and its information from the display, this doesn't restart the count of the monster.
+[*][B]Scan Targeting[/B]: This will pick all the monsters from your targeting list and insert on the display. This will remove any custom monster you inserted with [I]Add Monster[/I] option.
+[/LIST]
+[/INDENT]
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://github.com/LeonardoFalk/windscripts/raw/master/huds/6755-awesome%%20task%%20helper/AweTaskHelper.lua"]Gist[/URL][/SIZE]

@@ -1,0 +1,26 @@
+[CENTER][SIZE=7][B]Spells Attacker[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Attacks monsters with areas, waves, beams or support spells.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Add monsters names on the [I]Monsters[/I] variable to consider those monsters on the spells areas, an empty list will use on any monster.
+
+Set [I]Players.Consider[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B] if you are playing on PvP worlds, this option will avoid using spells when there are players near, set [B][COLOR="#6666cc"]false[/COLOR][/B] to ignore this option.
+If you have set [I]Players.Consider[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B], edit the minimum distance to consider them by changing the [I]Distance[/I] parameter. To consider floors up and down use the [I]FloorDifference[/I] parameter. Optionally you can add friends on the [I]SafeList[/I] so the attacker will ignore them.
+
+For each spell entry you can input the [I]Name[/I]. Set [I]Amount[/I] if you want to cast on a specific amount of creatures around the spell or [I]Hppc[/I], if you want to shoot on a specific target until it have less than the health percent previously set.
+
+For the [I]SpecialAreas[/I] you can input areas where you don't want to cast spell, such as near stairs, holes. The default entry is [U]x-axis¹, x-axis², y-axis¹, y-axis² and z-axis[/U].
+
+If you want to use this script only when Targeting engine is enabled then set UseTargetState to [B][COLOR="#6666cc"]true[/COLOR][/B], if you want to use it all the time set it to [B][COLOR="#6666cc"]false[/COLOR][/B].
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/151-spells%%20attacker/SpellsAttacker.lua"]Gist[/URL][/SIZE]

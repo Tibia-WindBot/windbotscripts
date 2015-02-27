@@ -1,0 +1,17 @@
+[CENTER][SIZE=7][B]Screenshot On Advance and Death[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Takes a screenshot whenever you skill/level up or die.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Change the [I]Skills[/I] variable to specify which skills the bot should save. For each skill set [B][COLOR="#6666cc"]true[/COLOR][/B] to save or [B][COLOR="#6666cc"]false[/COLOR][/B] to ignore.
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/2077-screenshot%%20on%%20advance%%20and%%20death/ScreenshotOnAdvDeath.lua"]Gist[/URL][/SIZE]

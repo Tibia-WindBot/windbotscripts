@@ -1,0 +1,18 @@
+[CENTER][SIZE=7][B]Unrust Items[/B][/SIZE][/CENTER]
+
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+Removes the rust from the rusty items.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Change the [I]IgnoreCommon[/I] variable to specify wheter the bot should ignore common rusty armors/legs or not.
+Set [B][COLOR="#6666cc"]true[/COLOR][/B] to ignore or [B][COLOR="#6666cc"]false[/COLOR][/B] to use remover on that items. Set [I]DropTrash[/I] to [B][COLOR="#6666cc"]true[/COLOR][/B] to drop items worthless on the ground or set [B][COLOR="#6666cc"]false[/COLOR][/B] to keep them, as worth value you can set the variable [I]MinValue[/I] to define the minimum value for the unrusted item.
+
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/persistents/1161-unrust%%20items/UnrustItems.lua"]Download[/URL][/SIZE]

@@ -1,0 +1,21 @@
+[CENTER][SIZE=7][B]Show Runes[/B][/SIZE]
+[IMG]http://i.imgur.com/i9fYDit.png[/IMG][/CENTER]
+
+[SIZE=4][B]Description[/B][/SIZE]
+
+It shows on your screen where runes on your crosshair will hit.
+
+
+[SIZE=4][B]Configuration[/B][/SIZE]
+
+Change [I]AnimateShape[/I] to [B][COLOR="#0066ff"]false[/COLOR][/B] if you don't want to animate the shape with the current rune image, making that will freeze the image shown.
+Change [I]CommonShape[/I] to [B][COLOR="#0066ff"]true[/COLOR][/B] if you don't want to draw the rune shape, that will just show a "drown" icon on the affected squares.
+
+[SIZE=4][B]Code[/B][/SIZE]
+
+[LUA]%s[/LUA]
+[SIZE=1][URL="https://raw.githubusercontent.com/LeonardoFalk/windscripts/master/huds/6318-show%%20runes/ShowRunes.lua"]Gist[/URL][/SIZE]
+
+[SIZE=4][B]Special Thanks[/B][/SIZE]
+
+Lucas Terra, Raphael, Dehan and BUgWT for being nice as always and helping out with bugs and testing.
