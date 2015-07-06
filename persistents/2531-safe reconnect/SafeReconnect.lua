@@ -1,159 +1,140 @@
 init start
-	-- local SCRIPT_VERSION = "2.3.2"
-	-- If ReopenBps is set to true then it'll try to reopen the visible backpacks on the main backpack
-	-- setting it to false will just ignore your bps after you are logged in
+    -- local SCRIPT_VERSION = "3.0.0"
 
-	local ReopenBps = true
+    local ignoreServerSavingTime = false
+    local reopenVisibleBackpacks = true
 
-	-- If IgnoreServerSave is set to false it'll wait to relog if server save is occurring
-	-- setting it to true will try to relog even on server saving time
+    local accountsInformation    = {
+        {
+            accountName = "accountName",
+            accountPassword = "accountpassword",
+            characters = {"Bubble", "Eternal Oblivion"}
+        },
+        {
+            accountName = "accountName2",
+            accountPassword = "accountpassword2",
+            characters = {"Lord\'Paulistinha", "Crisne"}
+        },
+    }
 
-	local IgnoreServerSave = false
+    local specialChecks = {
+        {
+            function()
+                return isontemple()
+            end,
+            function()
+                printerrorf("AutoReconnect: [%q] Client closed. Reason: Character was inside a temple.", $name)
+                closeclient(true)
+            end
+        },
+        {
+            function()
+                return ($self.skull == SKULL_RED or $self.skull == SKULL_BLACK) and $pzone
+            end,
+            function()
+                printerrorf("AutoReconnect: [%q] Client closed. Reason: Character was red/black skulled inside a protection zone.", $name)
+                closeclient(true)
+            end
+        },
+        {
+            function()
+                return $stamina <= 840 and $pzone
+            end,
+            function()
+                printerrorf("AutoReconnect: [%q] Client closed. Reason: Character had less/equal than 14 hours of stamina and inside a protection zone.", $name)
+                closeclient(true)
+            end
+        },
+    }
 
-	-- [[ ONLY EDIT SPECIAL CHECKS IF YOU KNOW WHAT YOU'RE DOING ]]--
+    -- DO NOT EDIT BELOW --
+    if autoReconnecter == nil then
+        autoReconnecter = {
+            enabled = true
+        }
 
-	-- special checks are the checks it'll do after you login
-	-- for example: if you are skulled, inside temple, etc ...
+        autoReconnecter.isEnabled = function()
+            return autoReconnecter.enabled
+        end
 
-	local SpecialChecks = {
-		{
-			function()
-				return isontemple()
-			end,
-			function()
-				printerrorf("Safe Reconnect: [%q] Client closed. Reason: Character was inside a temple.", $name)
-				closeclient(true)
-			end
-		},
-		{
-			function()
-				return ($self.skull == SKULL_RED or $self.skull == SKULL_BLACK) and $pzone
-			end,
-			function()
-				printerrorf("Safe Reconnect: [%q] Client closed. Reason: Character was red/black skulled inside a protection zone.", $name)
-				closeclient(true)
-			end
-		},
-		{
-			function()
-				return $stamina <= 14*60 and $pzone
-			end,
-			function()
-				printerrorf("Safe Reconnect: [%q] Client closed. Reason: Character had less/equal than 14 hours of stamina and inside a protection zone.", $name)
-				closeclient(true)
-			end
-		},
-	}
+        autoReconnecter.pause = function()
+            autoReconnecter.enabled = false
+        end
 
-	-- DO NOT EDIT BELOW --
-	local reconState = 1
+        autoReconnecter.resume = function()
+            autoReconnecter.enabled = true
+        end
+    end
 
-	if $curscript.type ~= 'persistent' then
-		reconState = -1
-		printerror('Reconnect should be placed at Scripter/Persistents.\nChange this setting to run it properly.')
-	end
+    for _, accountEntry in pairs(accountsInformation) do
+        table.lower(accountEntry.characters)
+    end
 
-	local openFunc = function()
-		local lifeTime = $timems
-		local reopenLogin = get('Looting/OpenBPsAtLogin')
-
-		set('Looting/OpenBPsAtLogin', 'no')
-		reopenwindows('small')
-
-		while $openingbps do
-			wait(100)
-
-			if $timems - lifeTime >= 10000 and not $pzone then
-
-				set('Looting/OpenBPsAtLogin', reopenLogin)
-				return false
-			end
-		end
-
-		set('Looting/OpenBPsAtLogin', reopenLogin)
-		return true
-	end
-
-	local randTimeSS = math.random(100, 700)
+    local randTimeSS = math.random(100, 700)
 
 init end
 
-auto(1000)
+auto(1000, 2000)
 
-if (not $connected) and (IgnoreServerSave or (sstime() >= 600 + randTimeSS and sstime() <= 85800 - randTimeSS)) and reconState == 1 then
-	set('Targeting/Enabled', 'no')
-	set('Cavebot/Enabled', 'no')
+local currentServerSaveTime = sstime()
 
-	local changeSettings = false
+if autoReconnecter.enabled and (not $connected) and (ignoreServerSavingTime or (currentServerSaveTime >= 600 + randTimeSS and currentServerSaveTime <= 85800 - randTimeSS)) then
+    if $name ~= "" then
+        local index = 0
 
-	if $worldvisible then
-		changeSettings = get('Settings/OpenMenuPolicy')
-		set('Settings/OpenMenuPolicy', 'Do nothing')
-	end
+        for i, accountEntry in pairs(accountsInformation) do
+            if table.find(accountEntry.characters, $name:lower()) then
+                index = i
+                break
+            end
+        end
 
-	reconnect($worldvisible)
+        if index > 0 then
+            local login = accountsInformation[index]
+            local oldTypeTimeSettings = get('Settings/TypeWaitTime')
+            local oldPressTimeSettings = get('Settings/PressWaitTime')
 
-	randTimeSS = math.random(100, 700)
+            set('Settings/TypeWaitTime', '110 x 140')
+            set('Settings/PressWaitTime', '100 x 250')
+            setlifetime(20000)
 
-	if changeSettings then
-		set('Settings/OpenMenuPolicy', changeSettings)
-	end
+            while (not $connected) do
+                connect(login.accountName, login.accountPassword, $name) wait(200)
+            end
 
-	if $connected then
-		pausewalking(10000)
-	else
-		return
-	end
+            set('Settings/TypeWaitTime', oldTypeTimeSettings)
+            set('Settings/PressWaitTime', oldPressTimeSettings)
 
-	if ReopenBps then
-		local clientMin = $minimized
+            for _, checkCallback in pairs(specialChecks) do
+                if checkCallback[1]() then
+                    checkCallback[2]()
+                end
+            end
 
-		if clientMin and not $addons.enabled then
-			-- if windaddons is enabled then we don't need to restore the window
-			-- but if it's not, the bp opener will get stuck and alert you anytime
-			-- se we restore the window to make sure it'll open and you won't die
-			restoreclient() waitping()
-		end
+            if reopenVisibleBackpacks then
+                local oldOpenNextBpSettings = get('Looting/OpenNextBP')
+                local oldFocusPolicySettings = get('Settings/FocusPolicy')
+                local oldOpenBpsAtLoginSettings = get('Looting/OpenBPsAtLogin')
+                
+                set('Looting/OpenBPsAtLogin', 'no')
+                set('Settings/FocusPolicy', 'Focus on any event')
+                set('Looting/OpenNextBP', 'no')
+                setlifetime(10000)
+                reopenwindows('small')
 
-		local reopenSuccess = openFunc()
+                while $openingbps do
+                    wait(500) pausewalking(500)
+                end
 
-		if not reopenSuccess then
-			-- this will only happen if you took more than 10 seconds to open bps
-			-- if this happened probably you have another script trying to open it
-			-- or any other thing blocking it from opening, if so we should start
-			-- cavebot and targeting again to make sure you won't die, because after
-			-- 10 seconds the monsters will surround you and start attacking
-			printerrorf("Safe Reconnect: [%q] It took too long to open the backpacks, they could be already opened but for safety reasons you were alerted.", $name)
-			pausewalking(0)
-			set('Targeting/Enabled', 'yes')
-			set('Cavebot/Enabled', 'yes')
-
-			-- alert in this case
-			for _ = 1, 10 do
-				beep()
-				wait(1000)
-			end
-		end
-
-		if clientMin and not $minimized then
-			minimizeclient()
-		end
-	end
-
-	for _, callback in ipairs(SpecialChecks) do
-		-- here we check for the given special checks like
-		-- is on temple, low stamina, skulled, and logout
-		-- if something happened
-		if callback[1]() then
-			reconState = 0
-
-			return (callback[2] ~= nil and stopattack() and callback[2]()) or false
-		end
-	end
-
-	if not ($targeting and $cavebot) then
-		set('Targeting/Enabled', 'yes')
-		set('Cavebot/Enabled', 'yes')
-		pausewalking(0)
-	end
+                pausewalking(0)
+                set('Looting/OpenNextBP', oldOpenNextBpSettings)
+                set('Settings/FocusPolicy', oldFocusPolicySettings)
+                set('Looting/OpenBPsAtLogin', oldOpenBpsAtLoginSettings)
+            end
+        else
+            printerrorf("AutoReconnect: Account details for %q doesn't exist.", $name)
+        end
+    else
+        printerrorf("AutoReconnect: Please login first to save your credentials.")
+    end
 end
